@@ -1,0 +1,51 @@
+{
+  "source_file": "summary-2022-2025.csv",
+  "source_sha256": "50b9d7ed6f885d5d74b01842dd417f5974f7ddd0f0b3a4c7b41061b5c0915e63",
+  "aggregate_rows": 1781,
+  "years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "airlines": [
+    "9E",
+    "AA",
+    "AS",
+    "B6",
+    "DL",
+    "F9",
+    "G4",
+    "HA",
+    "MQ",
+    "NK",
+    "OH",
+    "OO",
+    "QX",
+    "UA",
+    "WN",
+    "YV",
+    "YX"
+  ],
+  "total_eligible_flights": 16665904,
+  "total_delayed_flights": 3261910,
+  "flights_by_year": {
+    "2022": 4017019,
+    "2023": 4159632,
+    "2024": 4270518,
+    "2025": 4218735
+  },
+  "checks": {
+    "unique_aggregate_keys": true,
+    "valid_integer_counts": true,
+    "stored_rates_match_counts": true,
+    "all_128_year_region_season_time_cells": true,
+    "aggregations_conserve_counts": true
+  },
+  "monthly_completeness": "Not verifiable from the supplied seasonal aggregates.",
+  "versions": {
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "matplotlib": "3.11.2"
+  }
+}
