@@ -1,0 +1,19 @@
+universe = vanilla
+executable = /bin/bash
+transfer_executable = false
+arguments = getandclean.sh $(year) $(month)
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = getandclean.sh
+transfer_output_files = summary-$(tag).csv
+
+output = flight-$(Cluster)-$(tag).out
+error = flight-$(Cluster)-$(tag).err
+log = flight-$(Cluster).log
+
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+queue year, month, tag from flight_months.txt
