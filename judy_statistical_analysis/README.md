@@ -1,41 +1,5 @@
 # Judy: Overall Comparison and Statistical Modeling
 
-## Research question
-
-How do morning and evening departure-delay rates differ after
-adjusting for airline, season, origin region, and year?
-
-## Data
-
-Input: ../summary-2022-2025.csv, produced by the group's data
-processing workflow.
-
-The input contains 1,781 groups representing 16,665,904 included
-flights from 2022 through 2025.
-
-Each row groups flights by Year, Airline, Season, Region, and
-TimeOfDay, with TotalFlights and DelayedFlights.
-
-Morning: scheduled local departure from 06:00 through 11:59.
-Evening: scheduled local departure from 18:00 through 23:59.
-Delay: departure at least 15 minutes after schedule.
-Cancelled flights and records without usable delay information
-are excluded. Origins outside the mapped states and DC are excluded.
-
-Source:
-https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=FGJ
-
-## Run
-
-Requires R and Bash. No additional R packages are required.
-
-From the repository root:
-
-```bash
-bash judy_statistical_analysis/run_analysis.sh
-cat > judy_statistical_analysis/README.md <<'EOF'
-# Judy: Overall Comparison and Statistical Modeling
-
 ## Research Question
 
 How do morning and evening departure-delay rates differ after

@@ -1,143 +1,15 @@
-Data checks passed.
-Number of groups: 1781
-Included flights: 16665904
-
-Overall departure-delay rates:
+Groups: 1781 
+Included flights: 16665904 
  TimeOfDay TotalFlights DelayedFlights DelayRate DelayPercent
    Morning     10560946        1381155 0.1307795     13.07795
    Evening      6104958        1880755 0.3080701     30.80701
+Overall evening penalty: 17.72906 percentage points
+null device 
+          1 
+null device 
+          1 
 
-Evening penalty: 17.73 percentage points
-null device
-          1
-
-Call:
-glm(formula = cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay +
-    Airline + Season + Region + Year, family = binomial, data = flights)
-
-Coefficients:
-                  Estimate Std. Error  z value Pr(>|z|)
-(Intercept)      -2.308364   0.005517 -418.424  < 2e-16 ***
-TimeOfDayEvening  1.074704   0.001279  840.144  < 2e-16 ***
-AirlineAA         0.617611   0.005351  115.411  < 2e-16 ***
-AirlineAS         0.468123   0.006227   75.175  < 2e-16 ***
-AirlineB6         0.823817   0.005876  140.191  < 2e-16 ***
-AirlineDL         0.257757   0.005392   47.800  < 2e-16 ***
-AirlineF9         0.924207   0.006161  150.020  < 2e-16 ***
-AirlineG4         0.638752   0.006917   92.343  < 2e-16 ***
-AirlineHA         0.240662   0.008957   26.869  < 2e-16 ***
-AirlineMQ         0.182217   0.006233   29.234  < 2e-16 ***
-AirlineNK         0.705047   0.005984  117.816  < 2e-16 ***
-AirlineOH         0.362338   0.006297   57.546  < 2e-16 ***
-AirlineOO         0.242087   0.005605   43.194  < 2e-16 ***
-AirlineQX         0.086190   0.014168    6.083 1.18e-09 ***
-AirlineUA         0.416902   0.005478   76.110  < 2e-16 ***
-AirlineWN         0.721832   0.005304  136.104  < 2e-16 ***
-AirlineYV         0.413304   0.011720   35.265  < 2e-16 ***
-AirlineYX        -0.006314   0.006184   -1.021   0.3072
-SeasonSummer      0.266910   0.001709  156.201  < 2e-16 ***
-SeasonFall       -0.310995   0.001877 -165.686  < 2e-16 ***
-SeasonWinter     -0.017808   0.001833   -9.717  < 2e-16 ***
-RegionNortheast   0.043857   0.002574   17.035  < 2e-16 ***
-RegionSouth       0.020609   0.001940   10.625  < 2e-16 ***
-RegionWest       -0.153519   0.002078  -73.861  < 2e-16 ***
-Year2023         -0.077283   0.001834  -42.129  < 2e-16 ***
-Year2024         -0.061915   0.001822  -33.978  < 2e-16 ***
-Year2025         -0.004602   0.001820   -2.528   0.0115 *
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 1250457  on 1780  degrees of freedom
-Residual deviance:  241928  on 1754  degrees of freedom
-AIC: 256776
-
-Number of Fisher Scoring iterations: 4
-
-
-Converged: TRUE
-Aliased coefficients: 0
-Adjusted evening/morning odds ratio: 2.929126
-Pearson dispersion: 138.2579
-
-Interaction model converged: TRUE
-Aliased coefficients: 0
-Pearson dispersion: 76.86557
-Analysis of Deviance Table
-
-Model 1: cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay + Airline +
-    Season + Region + Year
-Model 2: cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay * (Airline +
-    Season + Region) + Year
-  Resid. Df Resid. Dev Df Deviance      F    Pr(>F)
-1      1754     241928
-2      1732     132239 22   109689 64.865 < 2.2e-16 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-Single term deletions
-
-Model:
-cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay * (Airline +
-    Season + Region) + Year
-                  Df Deviance F value    Pr(>F)
-<none>                 132239
-Year               3   135075  12.382 5.163e-08 ***
-TimeOfDay:Airline 16   204316  59.002 < 2.2e-16 ***
-TimeOfDay:Season   3   157946 112.232 < 2.2e-16 ***
-TimeOfDay:Region   3   144234  52.367 < 2.2e-16 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Year interaction model converged: TRUE
-Aliased coefficients: 0
-Analysis of Deviance Table
-
-Model 1: cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay * (Airline +
-    Season + Region) + Year
-Model 2: cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay + Airline +
-    Season + Region + Year + TimeOfDay:Airline + TimeOfDay:Season +
-    TimeOfDay:Region + TimeOfDay:Year
-  Resid. Df Resid. Dev Df Deviance      F   Pr(>F)
-1      1732     132239
-2      1729     131122  3   1116.5 4.8755 0.002224 **
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Common airlines:
- [1] "AA" "AS" "B6" "DL" "F9" "G4" "HA" "MQ" "NK" "OH" "OO" "UA" "WN" "YX"
-
-Adjusted probabilities and evening penalties:
- Year MorningPercent EveningPercent EveningPenaltyPP
- 2022          13.85          30.85            16.99
- 2023          12.89          29.46            16.57
- 2024          12.94          30.09            17.16
- 2025          13.19          31.97            18.78
-null device
-          1
-
-Common-airline model converged: TRUE
-Aliased coefficients: 0
-Analysis of Deviance Table
-
-Model 1: cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay + Airline +
-    Season + Region + Year + TimeOfDay:Airline + TimeOfDay:Season +
-    TimeOfDay:Region
-Model 2: cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay + Airline +
-    Season + Region + Year + TimeOfDay:Airline + TimeOfDay:Season +
-    TimeOfDay:Region + TimeOfDay:Year
-  Resid. Df Resid. Dev Df Deviance      F   Pr(>F)
-1      1619     129030
-2      1616     127917  3   1113.1 4.6573 0.003021 **
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
- Year MorningPercent EveningPercent EveningPenaltyPP
- 2022          13.86          30.85            16.99
- 2023          12.89          29.47            16.58
- 2024          12.93          30.07            17.14
- 2025          13.19          31.97            18.78
-
-Adjusted comparison: Airline
+Adjusted comparison: Airline 
  Group MorningPercent EveningPercent EveningPenaltyPP
     AA         14.996          32.78           17.787
     AS         14.618          26.86           12.237
@@ -154,36 +26,61 @@ Adjusted comparison: Airline
     WN         12.328          41.72           29.387
     YX          9.128          19.87           10.742
 
-Adjusted comparison: Season
+Adjusted comparison: Season 
   Group MorningPercent EveningPercent EveningPenaltyPP
  Spring          13.03          30.93            17.90
  Summer          14.75          39.46            24.71
    Fall          10.47          23.82            13.35
  Winter          14.62          27.51            12.89
 
-Adjusted comparison: Region
+Adjusted comparison: Region 
      Group MorningPercent EveningPercent EveningPenaltyPP
    Midwest          13.53          31.12            17.59
  Northeast          12.82          34.87            22.05
      South          13.26          32.59            19.33
       West          13.11          26.15            13.03
 
+Adjusted annual comparison:
+ Year MorningPercent EveningPercent EveningPenaltyPP
+ 2022          13.85          30.85            16.99
+ 2023          12.89          29.46            16.57
+ 2024          12.94          30.09            17.16
+ 2025          13.19          31.97            18.78
+
+Common-airline annual comparison:
+ Year MorningPercent EveningPercent EveningPenaltyPP
+ 2022          13.86          30.85            16.99
+ 2023          12.89          29.47            16.58
+ 2024          12.93          30.07            17.14
+ 2025          13.19          31.97            18.78
+Analysis of Deviance Table
+
+Model 1: cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay + Airline + 
+    Season + Region + Year + TimeOfDay:Airline + TimeOfDay:Season + 
+    TimeOfDay:Region
+Model 2: cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay + Airline + 
+    Season + Region + Year + TimeOfDay:Airline + TimeOfDay:Season + 
+    TimeOfDay:Region + TimeOfDay:Year
+  Resid. Df Resid. Dev Df Deviance      F   Pr(>F)   
+1      1619     129030                               
+2      1616     127917  3   1113.1 4.6573 0.003021 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
 Final model diagnostics:
-                                       Model Groups Converged
- Quasibinomial with time-of-day interactions   1781      TRUE
- AliasedCoefficients PearsonDispersion
-                   0          76.33153
+ Groups Converged AliasedCoefficients PearsonDispersion
+   1781      TRUE                   0          76.33153
 Single term deletions
 
 Model:
-cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay + Airline +
-    Season + Region + Year + TimeOfDay:Airline + TimeOfDay:Season +
+cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay + Airline + 
+    Season + Region + Year + TimeOfDay:Airline + TimeOfDay:Season + 
     TimeOfDay:Region + TimeOfDay:Year
-                  Df Deviance  F value    Pr(>F)
-<none>                 131122
+                  Df Deviance  F value    Pr(>F)    
+<none>                 131122                       
 TimeOfDay:Airline 16   203068  59.2928 < 2.2e-16 ***
 TimeOfDay:Season   3   156798 112.8524 < 2.2e-16 ***
 TimeOfDay:Region   3   143151  52.8718 < 2.2e-16 ***
-TimeOfDay:Year     3   132239   4.9073  0.002128 **
+TimeOfDay:Year     3   132239   4.9073  0.002128 ** 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

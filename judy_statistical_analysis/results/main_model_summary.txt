@@ -1,10 +1,10 @@
 
 Call:
-glm(formula = cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay +
+glm(formula = cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay + 
     Airline + Season + Region + Year, family = binomial, data = flights)
 
 Coefficients:
-                  Estimate Std. Error  z value Pr(>|z|)
+                  Estimate Std. Error  z value Pr(>|z|)    
 (Intercept)      -2.308364   0.005517 -418.424  < 2e-16 ***
 TimeOfDayEvening  1.074704   0.001279  840.144  < 2e-16 ***
 AirlineAA         0.617611   0.005351  115.411  < 2e-16 ***
@@ -22,7 +22,7 @@ AirlineQX         0.086190   0.014168    6.083 1.18e-09 ***
 AirlineUA         0.416902   0.005478   76.110  < 2e-16 ***
 AirlineWN         0.721832   0.005304  136.104  < 2e-16 ***
 AirlineYV         0.413304   0.011720   35.265  < 2e-16 ***
-AirlineYX        -0.006314   0.006184   -1.021   0.3072
+AirlineYX        -0.006314   0.006184   -1.021   0.3072    
 SeasonSummer      0.266910   0.001709  156.201  < 2e-16 ***
 SeasonFall       -0.310995   0.001877 -165.686  < 2e-16 ***
 SeasonWinter     -0.017808   0.001833   -9.717  < 2e-16 ***
@@ -31,7 +31,7 @@ RegionSouth       0.020609   0.001940   10.625  < 2e-16 ***
 RegionWest       -0.153519   0.002078  -73.861  < 2e-16 ***
 Year2023         -0.077283   0.001834  -42.129  < 2e-16 ***
 Year2024         -0.061915   0.001822  -33.978  < 2e-16 ***
-Year2025         -0.004602   0.001820   -2.528   0.0115 *
+Year2025         -0.004602   0.001820   -2.528   0.0115 *  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -43,6 +43,3 @@ AIC: 256776
 
 Number of Fisher Scoring iterations: 4
 
-
-Converged: TRUE
-Pearson dispersion: 138.2579
