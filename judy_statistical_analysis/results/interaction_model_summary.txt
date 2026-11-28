@@ -1,0 +1,92 @@
+
+Call:
+glm(formula = cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay *
+    (Airline + Season + Region) + Year, family = quasibinomial,
+    data = flights)
+
+Coefficients:
+                                   Estimate Std. Error t value Pr(>|t|)
+(Intercept)                      -2.0767103  0.0633234 -32.795  < 2e-16 ***
+TimeOfDayEvening                  0.5631636  0.0944821   5.961 3.04e-09 ***
+AirlineAA                         0.3882986  0.0621698   6.246 5.29e-10 ***
+AirlineAS                         0.3586421  0.0725756   4.942 8.49e-07 ***
+AirlineB6                         0.5644211  0.0698491   8.081 1.20e-15 ***
+AirlineDL                         0.1102492  0.0627051   1.758 0.078887 .
+AirlineF9                         0.6762815  0.0745347   9.073  < 2e-16 ***
+AirlineG4                         0.2496528  0.0835039   2.990 0.002832 **
+AirlineHA                         0.0327963  0.0970686   0.338 0.735504
+AirlineMQ                         0.0953204  0.0733454   1.300 0.193908
+AirlineNK                         0.4827026  0.0721527   6.690 3.00e-11 ***
+AirlineOH                         0.2294419  0.0743213   3.087 0.002053 **
+AirlineOO                         0.2337699  0.0644537   3.627 0.000295 ***
+AirlineQX                         0.0463342  0.1640494   0.282 0.777640
+AirlineUA                         0.1819726  0.0637829   2.853 0.004382 **
+AirlineWN                         0.1612232  0.0620943   2.596 0.009500 **
+AirlineYV                         0.4072925  0.1325729   3.072 0.002158 **
+AirlineYX                        -0.1768547  0.0728937  -2.426 0.015359 *
+SeasonSummer                      0.1443846  0.0219801   6.569 6.68e-11 ***
+SeasonFall                       -0.2477786  0.0237817 -10.419  < 2e-16 ***
+SeasonWinter                      0.1345359  0.0225918   5.955 3.14e-09 ***
+RegionNortheast                  -0.0616771  0.0318035  -1.939 0.052624 .
+RegionSouth                      -0.0229227  0.0242908  -0.944 0.345465
+RegionWest                       -0.0358773  0.0256651  -1.398 0.162321
+Year2023                         -0.0770444  0.0161850  -4.760 2.09e-06 ***
+Year2024                         -0.0582885  0.0160739  -3.626 0.000296 ***
+Year2025                         -0.0004194  0.0160554  -0.026 0.979163
+TimeOfDayEvening:AirlineAA        0.4852895  0.0935537   5.187 2.38e-07 ***
+TimeOfDayEvening:AirlineAS        0.2241206  0.1086297   2.063 0.039246 *
+TimeOfDayEvening:AirlineB6        0.5651567  0.1030819   5.483 4.81e-08 ***
+TimeOfDayEvening:AirlineDL        0.3298184  0.0941920   3.502 0.000474 ***
+TimeOfDayEvening:AirlineF9        0.5304121  0.1080505   4.909 1.00e-06 ***
+TimeOfDayEvening:AirlineG4        0.8098328  0.1221355   6.631 4.45e-11 ***
+TimeOfDayEvening:AirlineHA        0.2957843  0.1645003   1.798 0.072339 .
+TimeOfDayEvening:AirlineMQ        0.2102220  0.1087308   1.933 0.053348 .
+TimeOfDayEvening:AirlineNK        0.4880169  0.1050326   4.646 3.63e-06 ***
+TimeOfDayEvening:AirlineOH        0.2992046  0.1099568   2.721 0.006571 **
+TimeOfDayEvening:AirlineOO       -0.0067939  0.0979907  -0.069 0.944733
+TimeOfDayEvening:AirlineQX        0.1041743  0.2462596   0.423 0.672328
+TimeOfDayEvening:AirlineUA        0.5032270  0.0957055   5.258 1.64e-07 ***
+TimeOfDayEvening:AirlineWN        1.1041132  0.0930102  11.871  < 2e-16 ***
+TimeOfDayEvening:AirlineYV       -0.0132193  0.2046169  -0.065 0.948496
+TimeOfDayEvening:AirlineYX        0.3599548  0.1081050   3.330 0.000888 ***
+TimeOfDayEvening:SeasonSummer     0.2446924  0.0303708   8.057 1.44e-15 ***
+TimeOfDayEvening:SeasonFall      -0.1238333  0.0330351  -3.749 0.000184 ***
+TimeOfDayEvening:SeasonWinter    -0.3062262  0.0321541  -9.524  < 2e-16 ***
+TimeOfDayEvening:RegionNortheast  0.2390033  0.0455932   5.242 1.78e-07 ***
+TimeOfDayEvening:RegionSouth      0.0938514  0.0342742   2.738 0.006240 **
+TimeOfDayEvening:RegionWest      -0.2193552  0.0365934  -5.994 2.48e-09 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for quasibinomial family taken to be 76.86557)
+
+    Null deviance: 1250457  on 1780  degrees of freedom
+Residual deviance:  132239  on 1732  degrees of freedom
+AIC: NA
+
+Number of Fisher Scoring iterations: 4
+
+Analysis of Deviance Table
+
+Model 1: cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay + Airline +
+    Season + Region + Year
+Model 2: cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay * (Airline +
+    Season + Region) + Year
+  Resid. Df Resid. Dev Df Deviance      F    Pr(>F)
+1      1754     241928
+2      1732     132239 22   109689 64.865 < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Single term deletions
+
+Model:
+cbind(DelayedFlights, NotDelayedFlights) ~ TimeOfDay * (Airline +
+    Season + Region) + Year
+                  Df Deviance F value    Pr(>F)
+<none>                 132239
+Year               3   135075  12.382 5.163e-08 ***
+TimeOfDay:Airline 16   204316  59.002 < 2.2e-16 ***
+TimeOfDay:Season   3   157946 112.232 < 2.2e-16 ***
+TimeOfDay:Region   3   144234  52.367 < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
